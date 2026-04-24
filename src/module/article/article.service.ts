@@ -9,8 +9,9 @@ import { Repository } from 'typeorm';
 export class ArticleService {
     articleModel: any;
     constructor(@InjectRepository(Article) private articleRepo: Repository<Article>) { }
-    async create(createArticleDto: CreateArticleDto) {
+    async create(createArticleDto: CreateArticleDto, file: Express.Multer.File) {
         const article = this.articleRepo.create(createArticleDto)
+        article.backgroundImage = `http://localhost:4001/uploads/${file.filename}`
         return await this.articleRepo.save(article)
     }
 

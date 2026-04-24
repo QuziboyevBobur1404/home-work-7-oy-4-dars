@@ -111,7 +111,7 @@ export class AuthService {
       await this.authRepo.update(foundedUser.id, { otp, otpTime: time });
       return { message: "Please check your email" };
     } else {
-      throw new BadRequestException("Wrong password")
+      throw new BadRequestException("Wrong password");
     }
   }
 }

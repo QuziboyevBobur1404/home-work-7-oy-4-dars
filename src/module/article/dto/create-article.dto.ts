@@ -10,4 +10,6 @@ export class CreateArticleDto {
     @ApiProperty({ default: "HTML is cool" })
     content!: string;
 
+
+
 }

@@ -11,6 +11,7 @@ export class Article extends BaseEntity {
     @Column()
     content!: string
 
-
+    @Column()
+    backgroundImage!: string;
 }
 
